@@ -1,0 +1,60 @@
+﻿@model EntityLayer.Concrete.Content
+@{
+    ViewBag.Title = "HeadingAddCommentlView";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="container bg-dark">
+    <div class="card mt-4 mb-3 ">
+        <div class="container" style="display:flex;">
+            <a href="/WriterProfile/Index/@Html.DisplayFor(x => x.WriterID)">
+                <img src="@Html.DisplayFor(x => x.Writer.WriterImage)"
+                     alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                     style="width: 70px; z-index: 1">
+            </a>
+            <a href="/WriterProfile/Index/@Html.DisplayFor(x => x.WriterID)" style="color:black; text-decoration:none;">   <h5 class="card-title ms-3 mt-5">@Html.DisplayFor(x => x.Writer.WriterName) @Html.DisplayFor(x => x.Writer.WriterSurName)</h5></a>
+        </div>
+
+
+        <div class="container mt-5 mb-5">
+            <div class="d-flex justify-content-center row">
+                <div class="d-flex flex-column col-md-8">
+                    <div class="coment-bottom bg-white p-2 px-4">
+                        @using (Html.BeginForm("HeadingAddCommentlView", "HeadingDetail", FormMethod.Post))
+                        {
+                            <div class="commented-section mt-3">
+                                <div class="d-flex flex-row align-items-center commented-user">
+                                    <img class="img-fluid img-responsive rounded-circle mr-2" src="@Html.DisplayFor(x => x.Writer.WriterImage)" width="38">  <h5 class="mr-2 ms-2">@Html.DisplayFor(x => x.Writer.WriterName) @Html.DisplayFor(x => x.Writer.WriterSurName)</h5><span class="dot mb-1"></span>
+                                </div>
+                                <div class="comment-text-sm">
+                                    <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+                                        <img class="img-fluid img-responsive rounded-circle mr-2" src="@Html.DisplayFor(x => x.Writer.WriterImage)" width="38">
+                                        @Html.Label("Yorumunuz")
+                                        @Html.TextBoxFor(x => x.ContentValue, new { @class = "form-control" })
+                                        <br />
+                                        @Html.Label("BaşlıkID")
+                                        @Html.TextBoxFor(x => x.HeadingID, new { @class = "form-control" })
+                                        <br />
+                                        @Html.Label("YazarID")
+                                        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
+                                        <button class="btn btn-primary" type="submit">Comment</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        }
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+

@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "EditWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Kullanıcı Düzenleme Sayfası</h2>
+
+@using (Html.BeginForm("EditWriter", "Admin", FormMethod.Post))
+{
+    <div class="form-group mt-5">
+        @Html.HiddenFor(x => x.WriterID)
+        @Html.HiddenFor(x => x.WriterStatus)
+        @Html.HiddenFor(x => x.WriterFollowed)
+        @Html.HiddenFor(x => x.WriterFollower)
+
+        @Html.Label("Kullanıcı Resmi")
+        @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanıcı SoyAdı")
+        @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanıcı Mail")
+        @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanıcı Şifresi")
+        @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanıcı Başlığı")
+        @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kullanıcı Hakkında")
+        @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+        <br />
+
+
+        <button class="btn btn-success">Düzenle</button>
+        <a class="btn btn-danger" href="/Admin/DeleteWriter/@Html.DisplayFor(x=>x.WriterID)">Kaldır</a>
+
+    </div>
+}

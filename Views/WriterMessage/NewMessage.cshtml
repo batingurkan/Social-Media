@@ -1,0 +1,86 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<section class="gradient-custom">
+    <div class="col-10 m-auto mb-3 mt-3">
+ 
+
+        <div class="card mask-custom ">
+            <div class="card-body ">
+
+                <!-- /.col -->
+                <div class="col-md-10 m-auto ">
+                    @using (Html.BeginForm("NewMessage", "WriterMessage", FormMethod.Post))
+                    {
+                        
+                            <div class="card-header">
+                                <h3 class="card-title">Yeni Mesaj Oluştur</h3>
+                            </div>
+                            <!-- /.card-header -->
+
+
+                            <div class="card-body">
+                                <div class="form-group">
+                                    @Html.Label("Alıcı Maili")
+                                    @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.ReceiverMail)
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Konu")
+                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Subject)
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Mesajınız")
+                                    <textarea id="compose-textarea" name="MessageContent" class="form-control" style="height: 300px">
+                               
+                    </textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="btn btn-default btn-file">
+                                        <i class="fas fa-paperclip"></i> Dosya Ekle
+                                        <input type="file" name="attachment">
+                                    </div>
+                                    <p class="help-block">Max. 32MB</p>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <div class="float-right">
+                                  
+                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                </div>
+          
+                            </div>
+                            <!-- /.card-footer -->
+                        
+                    }
+                    <!-- /.card -->
+                </div>
+            </div>
+
+
+        </div>
+</section>
+<style>
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #fccb90;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1));
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1))
+    }
+
+    .mask-custom {
+        background: rgba(24, 24, 16, .2);
+        border-radius: 2em;
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.05);
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+    }
+</style>

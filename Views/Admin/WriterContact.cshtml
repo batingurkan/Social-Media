@@ -1,0 +1,90 @@
+﻿@using EntityLayer.Concrete
+@model List<Writer>
+@{
+    ViewBag.Title = "WriterContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Kullanıcı Yönetim Paneli</h2>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row column1">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Kullanıcılar</h2>
+                        </div>
+                    </div>
+                    <div class="full price_table padding_infor_info">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 profile_details margin_bottom_30">
+                                    <div class="contact_blog">
+                                        <div class="contact_inner">
+                                            <div class="left">
+                                                <h3>@item.WriterName @item.WriterSurName</h3>
+                                                <p><strong>About: </strong>@item.WriterTitle </p>
+                                                <ul class="list-unstyled">
+                                                    <li><i class="fa fa-envelope-o"></i> : @item.WriterMail</li>
+                                                    <li>Statü : @item.WriterStatus</li>
+                                                </ul>
+                                            </div>
+                                            <div class="right">
+                                                <div class="profile_contacts">
+                                                    <img class="img-responsive" src="@item.WriterImage" alt="#" />
+                                                </div>
+                                            </div>
+                                            <div class="bottom_list">
+                                                <div class="left_rating">
+                                                    <p class="ratings">
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star-o"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class="right_button">
+                                                    <a type="button" class="btn btn-success btn-xs" href="/AdminMessage/AdminNewMessage/">
+                                                        <i class="fa fa-user">
+                                                        </i> <i class="fa fa-comments-o"></i>
+                                                    </a>
+
+                                                    <a type="button" href="/Admin/WrProfileDetail/@item.WriterID/" class="btn btn-primary btn-xs">
+                                                        <i class="fa fa-user"> </i> Profili Göster
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- footer -->
+        <div class="container-fluid">
+            <div class="footer">
+                <p>
+                    Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                    Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- end dashboard inner -->
+</div>

@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+
+
+<div class="container bg-dark ">
+    <div class="d-flex">
+        @Html.Action("HomePartial", "HomePage")
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="card mt-4 mb-3">
+            <div class="container shadow border rounded" style="display:flex;">
+                <a href="#">
+                    <img src="@item.Writer.WriterImage"
+                         alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                         style="width: 70px; z-index: 1">
+                </a>
+                <a href="/WriterFriendProfile/FriendIndex/@item.WriterID/" style="color:black; text-decoration:none;">   <h5 class="card-title ms-3 mt-5">@item.Writer.WriterName @item.Writer.WriterSurName</h5></a>
+            </div>
+            <a href="/HeadingDetail/Index/@item.HeadingID">
+                <img src="@item.HeadingImage" class="card-img-top" alt="Wild Landscape" />
+            </a>
+            <div class="card-body">
+
+                <h4 class="card-text ">
+                    @item.HeadingName
+                </h4>
+                <p class="card-text">
+                    <small class="text-muted">@item.HeadingDate.Date.ToShortDateString()</small>
+                </p>
+
+
+                @Html.Action("HomeCommentPartial", "HomePage")
+
+
+            </div>
+
+        </div>
+
+
+
+    }
+
+
+
+
+
+</div>

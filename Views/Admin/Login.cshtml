@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<body class="bg-white">
+    <section class="ftco-section ">
+        <div class="container ">
+
+            <div class="row justify-content-center  ">
+                <div class=" col-9">
+                    <div class="login-wrap py-5 shadow ">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(https://i.hizliresim.com/6v8jpu4.jpg);"></div>
+                        <h3 class="text-center mb-0">Hoş Geldiniz</h3>
+                        <p class="text-center">Admin Giriş Yapma Ekranı</p>
+
+                        @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                                <input type="text" name="AdminMail" class="form-control" placeholder="Mail" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                                <input type="password" name="AdminPassword" class="form-control" placeholder="Şifre" required>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Giriş Yap</button>
+                            </div>
+                        }
+                        <div class="w-100 text-center mt-4 text">
+                 
+                            <a href="/WriterLogin/Index/">Kullancı Giriş Yapma Ekranına Dön</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/login-form-19/js/jquery.min.js"></script>
+    <script src="/login-form-19/js/popper.js"></script>
+    <script src="/login-form-19/js/bootstrap.min.js"></script>
+    <script src="/login-form-19/js/main.js"></script>
+
+</body>

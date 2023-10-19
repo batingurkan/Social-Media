@@ -1,0 +1,94 @@
+﻿@model EntityLayer.Concrete.Admin
+
+@{
+    ViewBag.Title = "AdminProfile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Profil</h2>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row column1">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Admin Profil</h2>
+                        </div>
+                    </div>
+                    <div class="full price_table padding_infor_info">
+                        <div class="row">
+                            <!-- user profile section -->
+                            <!-- profile image -->
+                            <div class="col-lg-12">
+                                <div class="full dis_flex center_text">
+                                    <div class="~/pluto-1.0.0/profile_img"><img width="180" class="rounded-circle" src="@Html.DisplayFor(x=>x.AdminImg)" alt="#" /></div>
+                                    <div class="profile_contant">
+                                        <div class="contact_inner">
+                                            <h3>@Html.DisplayFor(x=>x.AdminUserName)</h3>
+                                            <p><strong>Hakkında: </strong>@Html.DisplayFor(x => x.AdminTitle)</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-envelope-o"></i> : @Html.DisplayFor(x => x.AdminMail)</li>
+                                              
+                                            </ul>
+                                        </div>
+                                        <div class="user_progress_bar">
+                                            <div class="progress_bar">
+                                                <!-- Skill Bars -->
+                                                <span class="skill" style="width:@Html.DisplayFor(x => x.WebSkill)%;">Web Özellikleri <span class="info_valume">@Html.DisplayFor(x => x.WebSkill)%</span></span>
+                                                <div class="progress skill-bar ">
+                                                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="@Html.DisplayFor(x => x.WebSkill)" aria-valuemin="0" aria-valuemax="100" style="width: @Html.DisplayFor(x => x.WebSkill)%;">
+                                                    </div>
+                                                </div>
+                                                <span class="skill" style="width:@Html.DisplayFor(x => x.DeveloperSkill)%;">Geliştirici Özellikleri <span class="info_valume">@Html.DisplayFor(x => x.DeveloperSkill)%</span></span>
+                                                <div class="progress skill-bar">
+                                                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="@Html.DisplayFor(x => x.DeveloperSkill)" aria-valuemin="0" aria-valuemax="100" style="width: @Html.DisplayFor(x => x.DeveloperSkill)%;">
+                                                    </div>
+                                                </div>
+                                                <span class="skill" style="width:@Html.DisplayFor(x => x.ExecutiveSkill)%;">Yönetici Özellikleri <span class="info_valume">@Html.DisplayFor(x => x.ExecutiveSkill)%</span></span>
+                                                <div class="progress skill-bar">
+                                                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="@Html.DisplayFor(x => x.ExecutiveSkill)" aria-valuemin="0" aria-valuemax="100" style="width: @Html.DisplayFor(x => x.ExecutiveSkill)%;">
+                                                    </div>
+                                                </div>
+                                                <span class="skill" style="width:@Html.DisplayFor(x => x.communicationSkill)%;">İletişim Özellikleri <span class="info_valume">@Html.DisplayFor(x => x.communicationSkill)%</span></span>
+                                                <div class="progress skill-bar">
+                                                    <div class="progress-bar progress-bar-animated progress-bar-striped" role="progressbar" aria-valuenow="@Html.DisplayFor(x => x.communicationSkill)" aria-valuemin="0" aria-valuemax="100" style="width: @Html.DisplayFor(x => x.communicationSkill)%;">
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <a href="/Admin/EditProfile/@Html.DisplayFor(x=>x.AdminID)" class="btn btn-success">Profili Düzenle</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- profile contant section -->
+                               
+                                <!-- end user profile section -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- footer -->
+        <div class="container-fluid">
+            <div class="footer">
+                <p>
+                    Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                    Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- end dashboard inner -->
+</div>

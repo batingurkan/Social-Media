@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewBag.Title = "AddHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<div class="bg-dark">
+    <h2 class="text-white mt-4 ms-4">Gönderi Oluştur</h2>
+    @using (Html.BeginForm("AddHeading", "Heading", FormMethod.Post))
+    {
+        <div class="form-group container mt-4 text-white bg-dark">
+            @Html.Label("Başlık Adı")
+            @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.HeadingID)
+            <br />
+            @Html.Label("Başlık Resmi")
+            @Html.TextBoxFor(x => x.HeadingImage, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.HeadingID)
+            <br />
+            <div class="form-group">
+                <div class="btn btn-default btn-file">
+                    <i class="fas fa-paperclip"></i> Dosya Ekle
+                    <input type="file" name="attachment">
+                </div>
+                <p class="help-block">Max. 32MB</p>
+            </div>
+            <br />
+            @Html.Label("Kategori")
+            @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new
+            { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.CategoryID)
+            <br />
+
+            <button class="btn btn-info mb-5">Başlık Oluştur</button>
+        </div>
+    }
+</div>

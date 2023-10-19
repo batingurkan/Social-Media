@@ -1,0 +1,124 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewBag.Title = "AdminNewMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Mesaj Oluştur</h2>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <!-- table section -->
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        
+                    </div>
+                    <div class="full inbox_inner_section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="full padding_infor_info">
+                                    <div class="mail-box">
+                                        <aside class="sm-side">
+                                            <div class="user-head">
+                                                <a class="inbox-avatar" href="javascript:;">
+                                                    <img width="65" src="~/pluto-1.0.0/images/layout_img/user_img.jpg" alt="#" />
+                                                </a>
+                                                <div class="user-name">
+                                                    <h5><a href="#">John David</a></h5>
+                                                    <span><a href="#">Infotest@gmail.com</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="inbox-body">
+                                                <a href="/AdminMessage/AdminNewMessage/" class="btn btn-compose mt-2">
+                                                    Yeni Mail
+                                                </a>
+                                                <a href="/AdminMessage/AdminInBox/" class="btn btn-compose  mt-2">
+                                                    Gelen Mailler
+                                                </a>
+                                                <a href="/AdminMessage/AdminSendbox/" class="btn btn-compose  mt-2">
+                                                    Gönderilen Mailler
+                                                </a>
+                                              
+                                                <!-- Modal -->
+                                        </aside>
+                                        <aside class="lg-side">
+
+                                          
+                                                <table class="table table-inbox table-hover">
+                                                    <tbody>
+                                                        @using (Html.BeginForm("AdminNewMessage", "AdminMessage", FormMethod.Post))
+                                                        {
+
+                                                            <div class="card-header">
+                                                                <h3 class="card-title">Yeni Mesaj Oluştur</h3>
+                                                            </div>
+                                                            <!-- /.card-header -->
+
+
+                                                            <div class="card-body">
+                                                                <div class="form-group">
+                                                                    @Html.Label("Alıcı Maili")
+                                                                    @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
+                                                                    @Html.ValidationMessageFor(x => x.ReceiverMail)
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    @Html.Label("Konu")
+                                                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                                                                    @Html.ValidationMessageFor(x => x.Subject)
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    @Html.Label("Mesajınız")
+                                                                    <textarea id="compose-textarea" name="MessageContent" class="form-control" style="height: 300px">
+                               
+                    </textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <div class="btn btn-default btn-file">
+                                                                        <i class="fas fa-paperclip"></i> Dosya Ekle
+                                                                        <input type="file" name="attachment">
+                                                                    </div>
+                                                                    <p class="help-block">Max. 32MB</p>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /.card-body -->
+                                                            <div class="card-footer">
+                                                                <div class="float-right">
+
+                                                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                                                </div>
+
+                                                            </div>
+                                                            <!-- /.card-footer -->
+
+                                                        }
+                                                        <!-- /.card -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </aside>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- table section -->
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="container-fluid">
+        <div class="footer">
+            <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
+        </div>
+    </div>
+</div>

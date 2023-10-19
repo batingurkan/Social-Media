@@ -1,0 +1,63 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<body class="bg-white">
+    <section class="ftco-section ">
+        <div class="container ">
+
+            <div class="row justify-content-center width ">
+                <div class="col-9 ">
+                    <div class="login-wrap py-5 shadow">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(https://i.hizliresim.com/6v8jpu4.jpg);"></div>
+                        <h3 class="text-center mb-0">Kayıt Olun</h3>
+
+
+                        @using (Html.BeginForm("SignIn", "WriterLogin", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                @Html.Label("Yazar Adı")
+                                @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.WriterName)
+                                <br />
+                                @Html.Label("Yazar SoyAdı")
+                                @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.WriterSurName)
+                                <br />
+                                @Html.Label("Yazar Mail")
+                                @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.WriterMail)
+                                <br />
+                                @Html.Label("Yazar Şifresi")
+                                @Html.PasswordFor(x => x.WriterPassword, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.WriterPassword)
+                                <br />
+                                @Html.Label("Yazar Ünvanı")
+                                @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.WriterTitle)
+                                <br />
+                                @Html.Label("Yazar Hakkında")
+                                @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.WriterAbout)
+                                <br />
+                                <button class="btn btn-info">Kayıt Ol</button>
+                            </div>
+                        }
+                        <div class="w-100 text-center mt-4 text">
+                            <p class="mb-0">Giriş Ekranına Geri Dön</p>
+                            <a href="/WriterLogin/Index/">Giriş Yap</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/login-form-19/js/jquery.min.js"></script>
+    <script src="/login-form-19/js/popper.js"></script>
+    <script src="/login-form-19/js/bootstrap.min.js"></script>
+    <script src="/login-form-19/js/main.js"></script>
+
+</body>

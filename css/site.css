@@ -1,0 +1,90 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.layoutstyle {
+    width: 80%;
+
+    border-radius:20px;
+}
+
+body {
+  margin-bottom: 60px;
+
+}
+
+.bdge {
+    height: 21px;
+    background-color: orange;
+    color: #fff;
+    font-size: 11px;
+    padding: 8px;
+    border-radius: 4px;
+    line-height: 3px;
+}
+
+.comments {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+}
+
+.dot {
+    height: 7px;
+    width: 7px;
+    margin-top: 3px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.hit-voting:hover {
+    color: blue;
+}
+
+.hit-voting {
+    cursor: pointer;
+}
+
+.stats {
+    background: #f2f5f8 !important;
+    color: #000 !important;
+}
+
+.articles {
+    font-size: 10px;
+    color: #a1aab9;
+}
+
+.number1 {
+    font-weight: 500;
+}
+
+.followers {
+    font-size: 10px;
+    color: #a1aab9;
+}
+
+.number2 {
+    font-weight: 500;
+}
+
+.rating {
+    font-size: 10px;
+    color: #a1aab9;
+}
+
+.number3 {
+    font-weight: 500;
+}

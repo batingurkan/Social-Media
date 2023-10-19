@@ -1,0 +1,52 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+
+
+
+
+<div class="container bg-dark">
+    <div class="card mt-4 mb-3 ">
+        <div class="container" style="display:flex;">
+            <a href="/WriterProfile/Index/@Html.DisplayFor(x => x.WriterID)">
+                <img src="@Html.DisplayFor(x => x.Writer.WriterImage)"
+                     alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                     style="width: 70px; z-index: 1">
+            </a>
+            <a href="/WriterProfile/Index/@Html.DisplayFor(x => x.WriterID)" style="color:black; text-decoration:none;">   <h5 class="card-title ms-3 mt-5">@Html.DisplayFor(x => x.Writer.WriterName) @Html.DisplayFor(x => x.Writer.WriterSurName)</h5></a>
+        </div>
+        <img src="@Html.DisplayFor(x => x.HeadingImage)" class="card-img-top" alt="Wild Landscape" />
+        <div class="card-body">
+
+            <p class="card-text">
+                @Html.DisplayFor(x => x.HeadingName)
+            </p>
+            <p class="card-text">
+                <small class="text-muted">@Html.DisplayFor(x => x.HeadingDate)</small>
+            </p>
+        </div>
+
+
+        <div class="container mt-5 mb-5">
+            <div class="d-flex justify-content-center row">
+                <div class="d-flex flex-column col-md-8">
+                    <div class="coment-bottom bg-white p-2 px-4">
+                     
+                        @Html.Action("HdPartialView", "HeadingDetail")
+
+
+                    </div>
+                    <div class="d-flex flex-row add-comment-section mt-4 mb-4 ms-4"><img class="img-fluid img-responsive rounded-circle mr-2" src="https://i.imgur.com/qdiP4DB.jpg" width="38"><a href="/HeadingDetail/HeadingAddCommentlView/@Html.DisplayFor(x=>x.HeadingID)" class="btn btn-primary ms-4">Yorum Yap</a></div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+

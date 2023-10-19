@@ -1,0 +1,121 @@
+﻿@using EntityLayer.Concrete
+@model List<Message>
+@{
+    ViewBag.Title = "AdminInBox";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Gelen Kutusu</h2>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <!-- table section -->
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                       
+                    </div>
+                    <div class="full inbox_inner_section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="full padding_infor_info">
+                                    <div class="mail-box">
+                                        <aside class="sm-side">
+                                            <div class="user-head">
+                                                <a class="inbox-avatar" href="javascript:;">
+                                                    <img width="65" src="~/pluto-1.0.0/images/layout_img/user_img.jpg" alt="#" />
+                                                </a>
+                                                <div class="user-name">
+                                                    <h5><a href="#">John David</a></h5>
+                                                    <span><a href="#">Infotest@gmail.com</a></span>
+                                                </div>
+                                            </div>
+                                            <div class="inbox-body">
+                                                <a href="/AdminMessage/AdminNewMessage/" class="btn btn-compose mt-2">
+                                                    Yeni Mail
+                                                </a>
+                                                <a href="/AdminMessage/AdminInBox/" class="btn btn-compose  mt-2">
+                                                    Gelen Mailler
+                                                </a>
+                                                <a href="/AdminMessage/AdminSendbox/" class="btn btn-compose  mt-2">
+                                                    Gönderilen Mailler
+                                                </a>
+                                              
+                                                <!-- Modal -->
+                                        </aside>
+                                        <aside class="lg-side">
+                                            <div class="inbox-head">
+                                                <h3>Gelen Mailler</h3>
+                                                <form action="#" class="pull-right position search_inbox">
+                                                    <div class="input-append">
+                                                        <input type="text" class="sr-input" placeholder="Mail Ara">
+                                                        <button class="btn sr-btn" type="button"><i class="fa fa-search"></i></button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="inbox-body">
+                                                <div class="mail-option">
+
+                                                    <ul class="unstyled inbox-pagination">
+                                                        <li><span>1-50 of 234</span></li>
+                                                        <li>
+                                                            <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <table class="table table-inbox table-hover">
+                                                    <tbody>
+                                                        @foreach (var item in Model)
+                                                        {
+                                              
+                                                            <tr class="">
+                                                                <td class="inbox-small-cells">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                        <label class="custom-control-label" for="customCheck1"></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
+                                                                <td class="view-message  dont-show"><a href="/AdminMessage/AdminGetInboxMessageDetails/@item.MessageID">@item.SenderMail</a></td>
+                                                                <td class="view-message "><a href="/AdminMessage/AdminGetInboxMessageDetails/@item.MessageID">@item.Subject</a></td>
+                                                                <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
+                                                                <td class="view-message  text-right">@item.MessageDate.Date.ToShortDateString()</td>
+                                                            </tr>
+                                                         
+                                                        }
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </aside>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- table section -->
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="container-fluid">
+        <div class="footer">
+            <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
+        </div>
+    </div>
+</div>

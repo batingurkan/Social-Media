@@ -1,0 +1,49 @@
+﻿
+@using EntityLayer.Concrete
+@model List<Writer>
+
+<div class="container py-2 h-100 ms-5 mt-2">
+    <div class="row d-flex  align-items-center h-100 ms-3">
+
+        @foreach (var item in Model)
+        {
+            <div class="col col-md-9 col-lg-7 col-xl-6 d-flex shadow">
+                <div class="card" style="border-radius: 15px; background-color: #eee; ">
+                    <div class="card-body p-1">
+                        <div class="d-flex text-black">
+                            <div class="flex-shrink-0">
+                                <img src="@item.WriterImage"
+                                     alt="Generic placeholder image" class="img-fluid"
+                                     style="width: 80px; border-radius: 10px;">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1">@item.WriterName @item.WriterSurName</h5>
+                                <p class="mb-2 pb-1" style="color: #2b2a2a;">@item.WriterTitle</p>
+                                <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                                     style="background-color: #efefef;">
+                                    <div>
+                                        <p class="small text-muted mb-1">Articles</p>
+                                        <p class="mb-0">41</p>
+                                    </div>
+                                    <div class="px-3">
+                                        <p class="small text-muted mb-1">Takipçi</p>
+                                        <p class="mb-0">@item.WriterFollower</p>
+                                    </div>
+                                    <div>
+                                        <p class="small text-muted mb-1">Takip Edilen</p>
+                                        <p class="mb-0">@item.WriterFollowed</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex pt-1">
+                                    <a class="btn btn-outline-primary me-1 flex-grow-1">Mesaj</a>
+                                    <a class="btn btn-primary flex-grow-1" href="/WriterFriendProfile/FriendIndex/@item.WriterID">Profili Göster</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

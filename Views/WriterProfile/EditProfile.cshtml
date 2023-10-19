@@ -1,0 +1,125 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<section class="gradient-custom">
+    <div class="col-10 m-auto mb-3 mt-3">
+       <div class="card mask-custom ">
+            <div class="card-body ">
+                    <div class="container py-2 h-100 ms-5 mt-2 br ">
+                        <div class="row d-flex  align-items-center h-100 ">
+                            
+                                <div class="card m-auto col-6 shadow  " style="border-radius: 15px; background-color: #eee; ">
+                                    <div class="card-body p-1 ">
+                                        <div class="d-flex text-black ">
+                                            <div class="flex-shrink-0">
+                                                <img src="@Html.DisplayFor(x=>x.WriterImage)"
+                                                     alt="Generic placeholder image" class="img-fluid"
+                                                     style="width: 80px; border-radius: 10px;">
+                                            </div>
+                                            <div class="flex-grow-1 ms-3">
+                                                <h5 class="mb-1">@Html.DisplayFor(x => x.WriterName) @Html.DisplayFor(x => x.WriterSurName)</h5>
+                                                <p class="mb-2 pb-1" style="color: #2b2a2a;" @Html.DisplayFor(x => x.WriterTitle)</p>
+                                                <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                                                     style="background-color: #efefef;">
+                                                    <div>
+                                                        <p class="small text-muted mb-1">Gönderi</p>
+                                                        <p class="mb-0">41</p>
+                                                    </div>
+                                                    <div class="px-3">
+                                                        <p class="small text-muted mb-1">Takipçi</p>
+                                                        <p class="mb-0">@Html.DisplayFor(x => x.WriterFollower)</p>
+                                                    </div>
+                                                    <div>
+                                                        <p class="small text-muted mb-1">Takip Edilen</p>
+                                                        <p class="mb-0">@Html.DisplayFor(x => x.WriterFollowed)</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                            
+                        </div>
+                    </div>
+        
+
+
+                        <h2 class="">Yazar Düzenleme Sayfası</h2>
+             
+
+                    @using (Html.BeginForm("EditProfile", "WriterProfile", FormMethod.Post))
+                    {
+                        <div class="form-group">
+
+                            @Html.Label("Yazar Adı")
+                            @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterName)
+                            <br />
+                            @Html.Label("Yazar SoyAdı")
+                            @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterSurName)
+                            <br />
+                            @Html.Label("Yazar Mail")
+                            @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterMail)
+                            <br />
+                            @Html.Label("Yazar Şifresi")
+                            @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterPassword)
+                            <br />
+                            @Html.Label("Yazar Görsel Linki")
+                            @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterImage)
+                            <br />
+                            @Html.Label("Yazar Ünvanı")
+                            @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterTitle)
+                            <br />
+                            @Html.Label("Yazar Hakkında")
+                            @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.WriterAbout)
+
+                            @Html.HiddenFor(x => x.WriterID)
+                            @Html.HiddenFor(x => x.WriterFollower)
+                            @Html.HiddenFor(x => x.WriterFollowed)
+                            @Html.HiddenFor(x => x.WriterStatus)
+
+                            <br />
+
+                            <button class="btn btn-info">Yazarı Güncelle</button>
+
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+        </section>
+<style>
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #fccb90;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1));
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1))
+    }
+
+    .mask-custom {
+        background: rgba(24, 24, 16, .2);
+        border-radius: 2em;
+        backdrop-filter: blur(15px);
+        border: 2px solid rgba(255, 255, 255, 0.05);
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+    }
+</style>

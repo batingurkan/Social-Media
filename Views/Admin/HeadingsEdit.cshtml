@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewBag.Title = "HeadingsEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Başlık Düzenleme Sayfası</h2>
+
+@using (Html.BeginForm("HeadingsEdit", "Admin", FormMethod.Post))
+{
+    <div class="form-group mt-5">
+        @Html.HiddenFor(x => x.HeadingID)
+        @Html.HiddenFor(x => x.HeadingDate)
+
+        @Html.Label("Kullanıcı Maili")
+        @Html.TextBoxFor(x => x.Writer.WriterMail, new { @class = "form-control" })
+        @Html.Label("Başlık Adı")
+        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Başlık Resmi")
+        @Html.TextBoxFor(x => x.HeadingImage, new { @class = "form-control" })
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+
+        <button class="btn btn-success">Düzenle</button>
+        <a class="btn btn-danger" href="/Admin/RemoveHeading/@Html.DisplayFor(x=>x.HeadingID)">Kaldır</a>
+        
+    </div>
+}

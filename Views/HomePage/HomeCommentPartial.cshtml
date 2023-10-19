@@ -1,0 +1,25 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+@foreach (var item in Model)
+
+{
+
+    <div class="commented-section mt-3">
+        <div class="d-flex flex-row align-items-center commented-user">
+            <a href="/WriterFriendProfile/FriendIndex/@item.WriterID" class="text-decoration-none d-flex text-dark">
+                <img class="img-fluid img-responsive rounded-circle mr-2" src="@item.Writer.WriterImage" width="38">  <h5 class="mr-2 ms-2">@item.Writer.WriterName @item.Writer.WriterSurName</h5><span class=" mb-1"></span><span class="mb-1 ml-2 ms-2">@item.ContentDate.ToShortDateString()</span>
+
+            </a>
+        </div>
+        <div class="comment-text-sm"><span>@item.ContentValue</span></div>
+        <div class="reply-section">
+            <div class="d-flex flex-row align-items-center voting-icons">
+
+
+            </div>
+        </div>
+    </div>
+
+}
+

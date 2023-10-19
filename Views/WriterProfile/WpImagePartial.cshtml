@@ -1,0 +1,15 @@
+﻿@using EntityLayer.Concrete
+@model List<Heading>
+
+
+<div class="row g-2">
+    @foreach (var item in Model)
+    {
+       <div class="col-6 mb-2">
+            <a href="/HeadingDetail/Index/@item.HeadingID">
+                <img src="@item.HeadingImage"
+                     alt="image 1" class="w-100 h-100 max rounded-3">
+            </a>
+        </div>
+}
+     </div>

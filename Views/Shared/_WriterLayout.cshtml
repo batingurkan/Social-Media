@@ -1,0 +1,152 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Social_Media_Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Social_Media_Project.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+
+    <section class="h-100 gradient-custom-2 ">
+        <div class="container py-5 h-100 ">
+            <div class="row d-flex justify-content-center align-items-center h-100 ">
+                <div class="col col-lg-9 col-xl-7 rounded shadow w-75 gradient-custom ">
+                    <!-- Navbar -->
+                    <nav class="navbar navbar-expand-lg  ">
+                        <!-- Container wrapper -->
+                        <div class="container-fluid">
+                            <!-- Toggle button -->
+                            <button class="navbar-toggler"
+                                    type="button"
+                                    data-mdb-toggle="collapse"
+                                    data-mdb-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
+
+                            <!-- Collapsible wrapper -->
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <!-- Navbar brand -->
+                                <a class="navbar-brand ms-0 mt-2 mt-lg-0" href="/HomePage/Index/">
+                                    <img src="https://i.hizliresim.com/6v8jpu4.jpg"
+                                         height="55"
+                                         alt="MDB Logo"
+                                         loading="lazy" />
+                                </a>
+                                <!-- Left links -->
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                               
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/WriterProfile/Index/">Profil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Discover/Index/">Keşfet</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Heading/AddHeading/">Paylaş</a>
+                                    </li>
+                                </ul>
+                                <!-- Left links -->
+                            </div>
+                            <!-- Collapsible wrapper -->
+                            <!-- Right elements -->
+                            <div class="d-flex align-items-center">
+                                <!-- Icon -->
+                                <!-- Notifications -->
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                                           href="#"
+                                           id="navbarDropdownMenuAvatar"
+                                           role="button"
+                                           data-mdb-toggle="dropdown"
+                                           aria-expanded="false">
+                                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                                                 class="rounded-circle"
+                                                 height="25"
+                                                 alt="Black and White Portrait of a Man"
+                                                 loading="lazy" />
+                                        </a>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="/WriterMessage/InBox/">Mesajlar</a>
+                                        <a class="dropdown-item" href="#">Ayarlar</a>
+                                        <a class="dropdown-item" href="/WriterLogin/LogOut/">Çıkış Yap</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Right elements -->
+                        </div>
+                        <!-- Container wrapper -->
+                    </nav>
+                    <!-- Navbar -->
+                    <!-- Section -->
+                    <main role="main" class="">
+                        <div class="card bg-dark border-0">
+                            @RenderBody()
+                            <footer class="text-center text-white" style="background-color: #f1f1f1;">
+                                <!-- Grid container -->
+                                <div class="container pt-4">
+                                    <!-- Section: Social media -->
+                                
+                                    <!-- Section: Social media -->
+                                </div>
+                                <!-- Grid container -->
+                                <!-- Copyright -->
+                                <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                                    © 2023 Copyright:
+                                    <a class="text-dark" href="https://mdbootstrap.com/">Batın Gürkan</a>
+                                </div>
+                                <!-- Copyright -->
+                            </footer>
+                        </div>
+
+                    </main>
+                    <!-- Section -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #fccb90;
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1))
+        }
+
+        .mask-custom {
+            background: rgba(24, 24, 16, .2);
+            border-radius: 2em;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            background-clip: padding-box;
+            box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+        }
+    </style>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
